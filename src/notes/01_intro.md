@@ -111,13 +111,3 @@ Since React **cannot** communicate with a database directly, it must send **requ
 📡 **React communicates with the backend using HTTP requests.**  
 🌐 **The backend processes requests, interacts with the database, and returns data to React.**  
 
----
-
-### **What’s Next?**  
-- Learn how to build a **backend with Express.js** and **MongoDB or MySQL**.  
-- Secure your API with **authentication** (JWT, OAuth, etc.).  
-- Optimize data fetching using **GraphQL or REST APIs**.  
-
----
-
-Would you like a guide on **building a full-stack React + Node.js app** to practice this? 🚀
