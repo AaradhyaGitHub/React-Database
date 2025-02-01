@@ -75,4 +75,18 @@ export default function AvailablePlaces({ onSelectPlace }) {
 }
 ```
 
+We can improve on that. The then blocks chain is good but the async await
+method is prefered and just better
+
+```jsx
+seEffect(() => {
+  async function fetchPlaces() {
+    const response = await fetch("http://localhost:3000/places");
+    const resData = await response.json();
+    setAvailablePlaces(resData.places);
+  }
+  fetchPlaces();
+}, []);
+```
+
 ---
