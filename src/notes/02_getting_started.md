@@ -90,18 +90,19 @@ seEffect(() => {
 ```
 
 ---
-### **Enhancing UX for Slow Network Conditions**  
 
-When fetching data over a **slow 3G connection**, users experience a delay before content appears. Instead of showing **"No places available"** immediately, we provide:  
+### **Enhancing UX for Slow Network Conditions**
+
+When fetching data over a **slow 3G connection**, users experience a delay before content appears. Instead of showing **"No places available"** immediately, we provide:
 
 ✅ **A loading state** → Displays `"Fetching Places..."` while waiting for data.  
-✅ **Better UX** → Prevents confusion when data is still loading.  
+✅ **Better UX** → Prevents confusion when data is still loading.
 
 ---
 
-### **1️⃣ Updating `AvailablePlaces.jsx` to Handle Loading State**  
+### **1️⃣ Updating `AvailablePlaces.jsx` to Handle Loading State**
 
-We add a **state variable** `isFetching` to track whether data is still being fetched.  
+We add a **state variable** `isFetching` to track whether data is still being fetched.
 
 ```jsx
 import { useState, useEffect } from "react";
@@ -142,7 +143,7 @@ export default function AvailablePlaces({ onSelectPlace }) {
 
 ---
 
-### **2️⃣ Enhancing `Places.jsx` to Display a Loading State**  
+### **2️⃣ Enhancing `Places.jsx` to Display a Loading State**
 
 We modify `Places.jsx` to **conditionally** show a **loading message** while data is being fetched.
 
@@ -190,24 +191,27 @@ export default function Places({
 
 ---
 
-### **3️⃣ What’s Happening Here?**  
+### **3️⃣ What’s Happening Here?**
 
-1️⃣ **`isFetching` State Added**  
-   - Set to `true` before fetching starts.  
-   - Set to `false` after fetching completes (whether successful or failed).  
+1️⃣ **`isFetching` State Added**
 
-2️⃣ **`useEffect` Fetching Logic**  
-   - **Try-Catch Block** handles errors.  
-   - **Finally Block** ensures `setIsFetching(false)` runs **regardless of success or failure**.  
+- Set to `true` before fetching starts.
+- Set to `false` after fetching completes (whether successful or failed).
 
-3️⃣ **`Places.jsx` Adjustments**  
-   - Shows `"Fetching Places..."` while data loads.  
-   - Shows `"No places available."` only **after** loading is done and no data exists.  
+2️⃣ **`useEffect` Fetching Logic**
+
+- **Try-Catch Block** handles errors.
+- **Finally Block** ensures `setIsFetching(false)` runs **regardless of success or failure**.
+
+3️⃣ **`Places.jsx` Adjustments**
+
+- Shows `"Fetching Places..."` while data loads.
+- Shows `"No places available."` only **after** loading is done and no data exists.
 
 ---
 
-### **4️⃣ Benefits of This Approach**  
+### **4️⃣ Benefits of This Approach**
 
 ✅ **Better UX:** Users see a clear loading message instead of an empty screen.  
 ✅ **Handles Slow Connections:** Reactively updates the UI when data arrives.  
-✅ **Prevents Misleading Messages:** `"No places available."` only appears **after** the request completes.  
+✅ **Prevents Misleading Messages:** `"No places available."` only appears **after** the request completes.
