@@ -14,7 +14,7 @@ export async function updateUserPlaces(places) {
     method: "PUT",
     body: JSON.stringify(places),
     headers: {
-      "Context-Type": "application/json"
+      "Content-Type": "application/json"
     }
   });
 
